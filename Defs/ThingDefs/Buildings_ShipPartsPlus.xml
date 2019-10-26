@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Beam -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>Slim_Ship_Beam</defName>
+		<label>slim ship structural beam</label>
+		<description>A slimmer structural beam around which a starship can be constructed. Includes all the necessary conduits and transit pipes for communications, power, and materials transport.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipBeam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,8)</drawSize> <!--Was 2,8-->
+			<shadowData>
+				<volume>(1.04, 1.0, 5.75)</volume> <!--Needs changes-->
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<MaxHitPoints>400</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,6)</size> <!--Was 2,6-->
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipPart"/>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>40</Plasteel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<researchPrerequisites>
+			<li>ShipBasics</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<uiIconScale>1.2</uiIconScale>
+	</ThingDef>
+
+	<!-- Cryptosleep casket -->
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>CompactShip_CryptosleepCasket</defName>
+		<label>compact ship cryptosleep casket</label>
+		<description>A more compact cryptosleep casket hardened against the dangers of space. Capable of maintaining a person in cryptosleep for centuries and surviving atmospheric re-entry. This one allows you to load people from the foot, as it has an alternate method of opening for tighter spaces.</description>
+		<thingClass>Building_CryptosleepCasket</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipCryptosleepCasket</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,2)</drawSize>
+			<shadowData>
+				<volume>(0.83, 0.3, 1.7)</volume>
+			</shadowData>
+		</graphicData>
+		<researchPrerequisites><li>ShipCryptosleep</li></researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<size>(1,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,2)</interactionCellOffset> <!--Was 1,0,0-->
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>2.66</explosiveRadius>
+				<explosiveDamageType>Flame</explosiveDamageType>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_HeadOnShipBeam</li>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<building>
+			<shipPart>true</shipPart>
+			<isPlayerEjectable>true</isPlayerEjectable>
+		</building>
+		<costList>
+			<Steel>125</Steel>
+			<Uranium>14</Uranium>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<ComponentSpacer>3</ComponentSpacer>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+	</ThingDef>
+
+</Defs>

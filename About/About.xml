@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Ally Escape Quest</name>
+	<author>Vas</author>
+	<url>https://github.com/VasVadum/AllyEscapeQuest</url>
+	<supportedVersions>
+		<li>1.0</li>
+	</supportedVersions>
+	<description>
+This quest allows you to help an ally get his settlement off of the planet. They will send you a request sometime after you research the ability to make ships. This will provide lots of benefits for you and let you play longer, helping other colonies on the map, angering certain factions in the process and making life more dangerous as well as gaining permanent friendships.</description>
+</ModMetaData>
